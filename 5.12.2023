@@ -1,0 +1,247 @@
+#include <iostream>
+using namespace std;
+
+class Person {
+public:
+    string name;
+    string surname;
+    unsigned short height;
+    unsigned short weight;
+    unsigned short hand;
+    unsigned short legs;
+    bool is_hungry;
+    bool is_happy;
+    bool is_angry;
+
+    void Sleep()
+    {
+        cout << "I want to sleep..." << "\n";
+    }
+    void Hungry()
+    {
+        cout << "Im so hungry" << "\n";
+    }
+    void Speak()
+    {
+        cout << "I can speak..." << "\n";
+    }
+    void Cook()
+    {
+        cout << "I like it.." << "\n";
+    }
+    void Cry()
+    {
+        cout << "Cry" << "\n";
+    }
+};
+
+class Cat {
+public:
+    string nickname;
+    bool hungry;
+    bool is_woolly;
+    bool is_happy;
+    bool is_angry;
+    bool is_wakeup;
+
+    void Sound()
+    {
+        cout << "Sound meow meow meow" << "\n";
+    }
+    void Play()
+    {
+        cout << "Play with me!" << "\n";
+    }
+    void Eat()
+    {
+        cout << "I want to eat meow" << "\n";
+    }
+    void Pee()
+    {
+        cout << "I have to go to the bathroom" << "\n";
+    }
+
+    void PersonPlayWithCat(Person& p)
+    {
+        if (is_wakeup == false)
+        {
+            is_wakeup == true;
+        }
+        if (p.is_angry == true)
+        {
+            p.is_angry = false;
+        }
+        if (p.is_happy == false)
+        {
+            p.is_happy = true;
+        }
+        if (is_angry == true)
+        {
+            is_angry = false;
+        }
+        if (is_happy == false)
+        {
+            is_happy = true;
+        }
+    }
+};
+
+class Dog {
+public:
+    string nickname;
+    bool hungry;
+    bool is_happy;
+    bool is_angry;
+    bool is_wakeup;
+    void Sound()
+    {
+        cout << "Sound gav gav gav" << "\n";
+    }
+    void Play()
+    {
+        cout << "Play with me!" << "\n";
+    }
+    void Eat()
+    {
+        cout << "I want to eat gav" << "\n";
+    }
+    void Pee()
+    {
+        cout << "I need to go outside" << "\n";
+    }
+
+    void DogPlayWithCat(Cat& c)
+    {
+        if (c.is_happy == false)
+        {
+            c.is_happy == true;
+        }
+        if (c.is_angry == true)
+        {
+            c.is_angry == false;
+        }
+        if (is_happy == false)
+        {
+            is_happy = true;
+        }
+        if (is_angry == true)
+        {
+            is_angry == false;
+        }
+    }
+
+};
+
+class Glasses {
+public:
+    string name;
+    string type_of_frame;
+    string type_of_glass;
+    bool short_sighted;
+    bool long_sightedness;
+    bool broke;
+
+    void Broke()
+    {
+        cout << "If you let me go, I might crash" << "\n";
+    }
+    void Dirty()
+    {
+        cout << "my glass might get dirty" << "\n";
+    }
+    void ImproveEyesight()
+    {
+        cout << "If you've got the right glass, I'll improve your eyesight" << "\n";
+    }
+    void ImpairVision()
+    {
+        cout << "If you've got the wrong glass, I'll make your eyesight worse" << "\n";
+    }
+
+    void DogPlayWithGlasses(Dog& d)
+    {
+        if(broke==false)
+        {
+            broke = true;
+        }
+        if (d.is_angry == false)
+        {
+            d.is_angry == true;
+        }
+        if (d.is_happy == true)
+        {
+            d.is_happy == false;
+        }
+    }
+
+    void CatPlayWithGlasses(Cat& c)
+    {
+        if (broke == false)
+        {
+            broke = true;
+        }
+        if (c.is_angry == false)
+        {
+            c.is_angry == true;
+        }
+        if (c.is_happy == true)
+        {
+            c.is_happy == false;
+        }
+    }
+};
+
+class Fridge {
+public:
+    bool on;
+    string brand;
+    string color;
+    unsigned short height;
+    unsigned short width;
+    unsigned short number_of_compartments;
+    unsigned short volume_in_liters;
+    unsigned short maximum_temperature;
+    unsigned short minimum_temperature;
+
+    void StoreFood()
+    {
+        cout << "I can store food" << "\n";
+    }
+    void MakeSound()
+    {
+        cout << "I can make a sound" << "\n";
+    }
+    void Freeze()
+    {
+        cout << "I can lower the temperature of food" << "\n";
+    }
+    void ShutDown()
+    {
+        cout << "If the lights go out, so do I(((((" << "\n";
+    }
+    void Stagger()
+    {
+        cout << "If you don't close the freezer tightly, get the mop ready)" << "\n";
+    }
+    void PersonOnfridge(Person& p)
+    {
+        if (on == false)
+        {
+            on = true;
+        }
+    }
+};
+
+int main()
+{
+    Person p;
+    Cat c;
+    Dog d;
+    Glasses g;
+    Fridge f;
+
+    c.PersonPlayWithCat(p);
+    d.DogPlayWithCat(c);
+    g.CatPlayWithGlasses(c);
+    g.DogPlayWithGlasses(d);
+    f.PersonOnfridge(p);
